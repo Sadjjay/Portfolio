@@ -130,32 +130,172 @@ section {
     align-items: center;
     z-index: 10000;
     transition: opacity var(--transition-slow);
+    overflow: hidden;
+}
+
+.loader-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    filter: blur(40px);
+    opacity: 0;
+    animation: loaderOrbPulse 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes loaderOrbPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    40% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1.15);
+    }
+}
+
+.loader-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 var(--space-3);
 }
 
 .loader-logo {
-    font-size: 3rem;
-    color: var(--accent);
-    opacity: 0;
-    animation: pulse 1.5s ease-in-out infinite;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 5.5rem;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    display: inline-flex;
+    margin-bottom: var(--space-3);
+    opacity: 1;
+    animation: none;
 }
 
-@keyframes pulse {
+.loader-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(10px);
+    animation: loaderLetterIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: calc(150ms + var(--i, 0) * 110ms);
+}
 
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(0.95);
-    }
+.loader-dot {
+    color: var(--accent);
+}
 
-    50% {
+@keyframes loaderLetterIn {
+    to {
         opacity: 1;
-        transform: scale(1.05);
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.loader-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: loaderFadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 750ms forwards;
+}
+
+.loader-tagline {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: loaderFadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 950ms forwards;
+}
+
+@keyframes loaderFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loader-progress {
+    margin: var(--space-4) auto 0;
+    width: 200px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 999px;
+    overflow: hidden;
+    opacity: 0;
+    animation: loaderFadeUp 0.5s ease 1100ms forwards;
+}
+
+.loader-progress span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), #5AC8FA);
+    border-radius: 999px;
+    animation: loaderProgressFill 1.4s cubic-bezier(0.4, 0, 0.2, 1) 1100ms forwards;
+}
+
+@keyframes loaderProgressFill {
+    to {
+        width: 100%;
     }
 }
 
 .loader.fade-out {
     opacity: 0;
     pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .loader-logo {
+        font-size: 4rem;
+    }
+
+    .loader-orb {
+        width: 380px;
+        height: 380px;
+    }
+
+    .loader-name {
+        font-size: 0.95rem;
+    }
+
+    .loader-tagline {
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader-orb,
+    .loader-letter,
+    .loader-name,
+    .loader-tagline,
+    .loader-progress,
+    .loader-progress span {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .loader-progress span {
+        width: 100%;
+    }
 }
 
 /* Navigation */
@@ -587,6 +727,26 @@ section {
     font-weight: 500;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.tech-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
+    padding: 3px 10px;
+    border-radius: var(--radius-xl);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
 .project-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -970,7 +1130,7 @@ section {
     position: relative;
     width: 50%;
     padding-right: var(--space-6);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-3);
 }
 
 .timeline-item:nth-child(even) {
@@ -985,7 +1145,7 @@ section {
 
 .timeline-dot {
     position: absolute;
-    top: 24px;
+    top: 18px;
     right: -8px;
     width: 16px;
     height: 16px;
@@ -1004,9 +1164,9 @@ section {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: var(--space-3) var(--space-4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
     position: relative;
 }
 
@@ -1014,7 +1174,7 @@ section {
 .timeline-content::before {
     content: '';
     position: absolute;
-    top: 24px;
+    top: 18px;
     right: -10px;
     border-style: solid;
     border-width: 10px 0 10px 10px;
@@ -1031,7 +1191,7 @@ section {
 .timeline-content::after {
     content: '';
     position: absolute;
-    top: 25px;
+    top: 19px;
     right: -9px;
     border-style: solid;
     border-width: 9px 0 9px 9px;
@@ -1048,6 +1208,48 @@ section {
 .timeline-content:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: var(--space-4) var(--space-4) var(--space-3);
+}
+
+.timeline-logo-link {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: block;
+    z-index: 2;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-logo-link:hover,
+.timeline-logo-link:focus-visible {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.timeline-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    background: var(--bg-surface);
+    display: block;
+    opacity: 0.85;
+    transition: opacity var(--transition-base);
+}
+
+.timeline-content:hover .timeline-logo {
+    opacity: 1;
+}
+
+/* Make room for the logo so the title doesn't overlap */
+.timeline-content:has(.timeline-logo-link) h3,
+.timeline-content:has(.timeline-logo-link) h4 {
+    padding-right: 52px;
 }
 
 .timeline-date {
@@ -1055,21 +1257,26 @@ section {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--accent);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-1);
 }
 
 .timeline-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-primary);
-    margin-bottom: var(--space-1);
+    margin-bottom: 2px;
 }
 
 .timeline-content h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: var(--space-3);
+    margin-bottom: 0;
+    transition: margin-bottom var(--transition-base);
+}
+
+.timeline-content:hover h4 {
+    margin-bottom: var(--space-2);
 }
 
 .timeline-location {
@@ -1086,6 +1293,16 @@ section {
     color: var(--text-primary);
     font-size: 0.95rem;
     line-height: 1.5;
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base), opacity var(--transition-base);
+}
+
+.timeline-content:hover .timeline-tasks {
+    max-height: 500px;
+    opacity: 1;
 }
 
 .timeline-tasks li {
@@ -1130,6 +1347,23 @@ section {
         right: auto !important;
         border-width: 9px 9px 9px 0 !important;
         border-color: transparent var(--bg-surface) transparent transparent !important;
+    }
+}
+
+/* On touch devices (no hover), keep descriptions visible by default */
+@media (hover: none) {
+    .timeline-content {
+        padding: var(--space-4) var(--space-4) var(--space-3);
+    }
+
+    .timeline-content h4 {
+        margin-bottom: var(--space-2);
+    }
+
+    .timeline-tasks {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
     }
 }
 

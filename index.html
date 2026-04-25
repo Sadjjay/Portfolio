@@ -19,7 +19,18 @@
 
     <!-- Loading Screen -->
     <div class="loader">
-        <div class="loader-logo">ABD</div>
+        <div class="loader-orb"></div>
+        <div class="loader-content">
+            <div class="loader-logo" aria-label="ABD">
+                <span class="loader-letter" style="--i:0">A</span>
+                <span class="loader-letter" style="--i:1">B</span>
+                <span class="loader-letter" style="--i:2">D</span>
+                <span class="loader-letter loader-dot" style="--i:3">.</span>
+            </div>
+            <div class="loader-name">Alexandre Bonnegarde-Delisle</div>
+            <div class="loader-tagline">Mobile &amp; Game Developer</div>
+            <div class="loader-progress" aria-hidden="true"><span></span></div>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -51,7 +62,7 @@
             </div>
             <div class="container hero-content-wrapper hidden">
                 <div class="hero-left">
-                    <p class="greeting" data-i18n="greeting">Hi, I'm Alexandre Bonnegarde-Delisle</p>
+                    <p class="greeting" data-i18n="greeting">Hello, I'm Alexandre Bonnegarde-Delisle</p>
                     <p class="hero-subtitle" data-i18n="heroSubtitle">Frontend Developer</p>
 
                     <div class="about-text-compact">
@@ -100,7 +111,7 @@
                 <p></p>
                 <div class="project-showcase">
                     <!-- Project 1 (Mobile Game / App) -->
-                    <article class="fancy-project-card hidden">
+                    <article id="project-ffa" class="fancy-project-card hidden">
                         <div class="project-banner">
                             <img src="Sources/Images/FFA/FFA_App_Cover_Portfolio.png"
                                 alt="Freddy's Flipping Adventure Banner">
@@ -111,11 +122,15 @@
                                     alt="Freddy's Flipping Adventure Logo">
                                 <div class="project-title-area">
                                     <h3>Freddy's Flipping Adventure</h3>
-                                    <span class="platform-tag" data-i18n="ffaTag">Mobile Game</span>
+                                    <div class="project-tags">
+                                        <span class="platform-tag" data-i18n="ffaTag">Mobile Game</span>
+                                        <span class="tech-tag">Unity</span>
+                                        <span class="tech-tag">C#</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project-description">
-                                <p data-i18n="ffaDesc">Explore Flipping Freddy’s Adventure, a 2D platform mobile game
+                                <p data-i18n="ffaDesc">Explore Freddy’s Flipping Adventure, a 2D platform mobile game
                                     guiding Freddy, a
                                     brave dog, through obstacle-filled levels with bonuses. Play online with friends and
                                     other players and climb the leaderboards!</p>
@@ -184,7 +199,7 @@
                     </article>
 
                     <!-- Project 2 (Web/Desktop) -->
-                    <article class="fancy-project-card hidden" style="transition-delay: 100ms">
+                    <article id="project-cend" class="fancy-project-card hidden" style="transition-delay: 100ms">
                         <div class="project-banner">
                             <img src="Sources/Images/CEND/CEND_App_Banner.png" alt="CEND Banner">
                         </div>
@@ -193,7 +208,10 @@
                                 <img class="project-logo" src="Sources/Images/CEND/CEND_App_Icon.png" alt="CEND Logo">
                                 <div class="project-title-area">
                                     <h3>CEND</h3>
-                                    <span class="platform-tag" data-i18n="cendTag">Mobile Application</span>
+                                    <div class="project-tags">
+                                        <span class="platform-tag" data-i18n="cendTag">Mobile Application</span>
+                                        <span class="tech-tag">Dart</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project-description">
@@ -336,6 +354,10 @@
                     <div class="timeline-item hidden">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <a class="timeline-logo-link" href="#project-ffa"
+                                aria-label="Go to Freddy's Flipping Adventure project">
+                                <img class="timeline-logo" src="Sources/Images/FFA/FFA_App_Icon.png" alt="FTA app icon">
+                            </a>
                             <span class="timeline-date" data-i18n="exp1Date">2025 – present</span>
                             <h3 data-i18n="exp1Title">Unity Game Developer</h3>
                             <h4 data-i18n="exp1Company">Freestyle Trampoline Association</h4>
@@ -389,6 +411,10 @@
                     <div class="timeline-item hidden">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <a class="timeline-logo-link" href="#project-cend" aria-label="Go to CEND project">
+                                <img class="timeline-logo" src="Sources/Images/CEND/CEND_App_Icon.png"
+                                    alt="CEND app icon">
+                            </a>
                             <span class="timeline-date">2021 – 2022</span>
                             <h3 data-i18n="exp4Title">Lead Mobile Developer</h3>
                             <h4 data-i18n="exp4Company">Linkall</h4>
