@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandre Bonegarde-Delisle | Frontend Developer</title>
+    <meta name="description"
+        content="Developing mobile applications and games with Flutter Unity, focusing on innovation, performance and user experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-logo">ABD</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" aria-label="Alex Dupont Home">ABD.</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero & About Section -->
+        <section id="home" class="hero combined-hero">
+            <div class="hero-bg">
+                <div class="gradient-sphere"></div>
+            </div>
+            <div class="container hero-content-wrapper hidden">
+                <div class="hero-left">
+                    <p class="greeting">Hi, I'm Alexandre Bonnegarde-Delisle</p>
+                    <p class="hero-subtitle">Frontend Developer</p>
+
+                    <div class="about-text-compact">
+                        <p>I’m a mobile and game developer with a focus on Flutter and Unity 3D. I enjoy building apps
+                            and games that are fun, functional, and easy to use.</p>
+                        <p>I like tackling both the technical side (<b>Coding</b>, <b>Optimization</b>, <b>Multiplayer
+                                systems</b>) and the
+                            creative side (<b>Design</b>, <b>UX</b>). My goal is to create projects that people enjoy
+                            and
+                            find useful.</p>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View my projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="about-image-wrapper">
+                        <img src="Sources/Images/Photo-profil.png" alt="Alexandre Bonnegarde-Delisle"
+                            class="about-image-small">
+                    </div>
+                    <div class="skills-container">
+                        <h3>Skills</h3>
+                        <div class="skills-grid">
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">Dart</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">Unity</span>
+                            <span class="skill-badge">Unreal Engine 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title hidden">Projects</h2>
+                <p></p>
+                <div class="project-showcase">
+                    <!-- Project 1 (Mobile Game / App) -->
+                    <article class="fancy-project-card hidden">
+                        <div class="project-banner">
+                            <img src="Sources/Images/FFA/FFA_App_Cover_Portfolio.png"
+                                alt="Freddy's Flipping Adventure Banner">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <img class="project-logo" src="Sources/Images/FFA/FFA_App_Icon.png"
+                                    alt="Freddy's Flipping Adventure Logo">
+                                <div class="project-title-area">
+                                    <h3>Freddy's Flipping Adventure</h3>
+                                    <span class="platform-tag">Mobile Game</span>
+                                </div>
+                            </div>
+                            <div class="project-description">
+                                <p>Explore Flipping Freddy’s Adventure, a 2D platform mobile game guiding Freddy, a
+                                    brave dog, through obstacle-filled levels with bonuses. Play online with friends and
+                                    other players and climb the leaderboards!</p>
+                            </div>
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <div class="project-screenshots">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_1.png" alt="Screenshot 1"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_2.png" alt="Screenshot 2"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_3.png" alt="Screenshot 3"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_4.png" alt="Screenshot 4"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_5.png" alt="Screenshot 5"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_6.png" alt="Screenshot 6"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_7.png" alt="Screenshot 7"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_8.png" alt="Screenshot 8"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_9.png" alt="Screenshot 9"
+                                        class="zoomable-image">
+                                    <img src="Sources/Images/FFA/FFA_iPhone_Screen_10.png" alt="Screenshot 10"
+                                        class="zoomable-image">
+                                </div>
+                                <button class="carousel-btn next-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://apps.apple.com/us/app/freddys-flipping-adventure/id6753355373"
+                                    class="store-btn" target="_blank">
+                                    <svg viewBox="0 0 384 512" width="28" height="28" fill="currentColor">
+                                        <path
+                                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                                        </path>
+                                    </svg>
+                                    <div class="store-text">
+                                        <span>Download on the</span>
+                                        <strong>App Store</strong>
+                                    </div>
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.FreestyleTrampolineAssociation.FFA&hl=fr"
+                                    class="store-btn" target="_blank">
+                                    <svg viewBox="0 0 512 512" width="28" height="28" fill="currentColor">
+                                        <path
+                                            d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                                        </path>
+                                    </svg>
+                                    <div class="store-text">
+                                        <span>GET IT ON</span>
+                                        <strong>Google Play</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 (Web/Desktop) -->
+                    <article class="fancy-project-card hidden" style="transition-delay: 100ms">
+                        <div class="project-banner">
+                            <img src="Sources/Images/CEND/CEND_App_Banner.png" alt="CEND Banner">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <img class="project-logo" src="Sources/Images/CEND/CEND_App_Icon.png" alt="CEND Logo">
+                                <div class="project-title-area">
+                                    <h3>CEND</h3>
+                                    <span class="platform-tag">Mobile Application</span>
+                                </div>
+                            </div>
+                            <div class="project-description">
+                                <p>CEND captures and retrieves sales, purchase, and expense invoices from various
+                                    platforms. Track real-time activity, tax returns, and social security contributions.
+                                    Stay connected with your accounting firm for enhanced proximity. New surprises and
+                                    management modules are updated annually for improved performance.
+                                </p>
+                            </div>
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <div class="project-screenshots">
+                                    <img src="Sources/Images/CEND/1.png" alt="Screenshot 1" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/2.png" alt="Screenshot 2" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/3.png" alt="Screenshot 3" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/4.png" alt="Screenshot 4" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/5.png" alt="Screenshot 5" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/6.png" alt="Screenshot 6" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/7.png" alt="Screenshot 7" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/8.png" alt="Screenshot 8" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/9.png" alt="Screenshot 9" class="zoomable-image">
+                                    <img src="Sources/Images/CEND/10.png" alt="Screenshot 10" class="zoomable-image">
+                                </div>
+                                <button class="carousel-btn next-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="store-btn" target="_blank">
+                                    <svg viewBox="0 0 384 512" width="28" height="28" fill="currentColor">
+                                        <path
+                                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                                        </path>
+                                    </svg>
+                                    <div class="store-text">
+                                        <span>Download on the</span>
+                                        <strong>App Store</strong>
+                                    </div>
+                                </a>
+                                <a href="#" class="store-btn" target="_blank">
+                                    <svg viewBox="0 0 512 512" width="28" height="28" fill="currentColor">
+                                        <path
+                                            d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                                        </path>
+                                    </svg>
+                                    <div class="store-text">
+                                        <span>GET IT ON</span>
+                                        <strong>Google Play</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="student-projects-section">
+                    <h3 class="subsection-title hidden">Student Projects</h3>
+                    <div class="student-grid">
+                        <!-- Student Project 1 -->
+                        <article class="student-card hidden">
+                            <h4 class="student-title">Siren: Rex Maria</h4>
+                            <div class="student-banner">
+                                <img src="Sources/Images/StudentProjects/Siren-Rex-Maria.png"
+                                    alt="Siren: Rex Maria Banner">
+                            </div>
+                            <p class="student-description">Siren: Rex Maria is set in a 1940s cruise ship wreck. As a
+                                diver, your mission is to uncover the ship’s mysterious sinking. But you’re unprepared
+                                for what lies within… What's inside? What’s real?</p>
+                            <a href="https://esma-game.itch.io/siren" target="_blank" class="itch-link">
+                                <svg role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.786 2.786 0 0 1-1.95-.795c-.182-.178-.32-.37-.446-.59-.127.222-.303.412-.486.59a2.788 2.788 0 0 1-1.95.795c-.092 0-.187-.025-.264-.052-.107 1.113-.152 2.176-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004c-.016-.775-.06-1.838-.168-2.95-.077.026-.172.052-.263.052a2.788 2.788 0 0 1-1.95-.795c-.184-.178-.36-.368-.486-.59-.127.22-.265.412-.447.59a2.786 2.786 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.74 2.74 0 0 1-.468-.602 2.738 2.738 0 0 1-.463.602 2.787 2.787 0 0 1-1.95.794h-.16a2.787 2.787 0 0 1-1.95-.793 2.738 2.738 0 0 1-.464-.602zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953.687-.072 1.406-.108 2.125-.107.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934zM12 12.714c-.002.002-2.14 1.964-2.523 2.662l1.4-.056v1.22c0 .056.56.033 1.123.007.562.026 1.124.05 1.124-.008v-1.22l1.4.055C14.138 14.677 12 12.713 12 12.713z">
+                                    </path>
+                                </svg>
+                                <span>See on Itch.io</span>
+                            </a>
+                        </article>
+
+                        <!-- Student Project 2 -->
+                        <article class="student-card hidden" style="transition-delay: 100ms">
+                            <h4 class="student-title">Micro Decay</h4>
+                            <div class="student-banner">
+                                <img src="Sources/Images/StudentProjects/Micro-Decay.png" alt="Micro Decay Banner">
+                            </div>
+                            <p class="student-description">MicroDecay is a puzzle and adventure game.</p>
+                            <p>Craft and recycle your tools to move forward in the game and resolve riddles!</p>
+                            <a href="https://alexandrebd.itch.io/microdecay" target="_blank" class="itch-link">
+                                <svg role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.786 2.786 0 0 1-1.95-.795c-.182-.178-.32-.37-.446-.59-.127.222-.303.412-.486.59a2.788 2.788 0 0 1-1.95.795c-.092 0-.187-.025-.264-.052-.107 1.113-.152 2.176-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004c-.016-.775-.06-1.838-.168-2.95-.077.026-.172.052-.263.052a2.788 2.788 0 0 1-1.95-.795c-.184-.178-.36-.368-.486-.59-.127.22-.265.412-.447.59a2.786 2.786 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.74 2.74 0 0 1-.468-.602 2.738 2.738 0 0 1-.463.602 2.787 2.787 0 0 1-1.95.794h-.16a2.787 2.787 0 0 1-1.95-.793 2.738 2.738 0 0 1-.464-.602zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953.687-.072 1.406-.108 2.125-.107.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934zM12 12.714c-.002.002-2.14 1.964-2.523 2.662l1.4-.056v1.22c0 .056.56.033 1.123.007.562.026 1.124.05 1.124-.008v-1.22l1.4.055C14.138 14.677 12 12.713 12 12.713z">
+                                    </path>
+                                </svg>
+                                <span>See on Itch.io</span>
+                            </a>
+                        </article>
+
+                        <!-- Student Project 3 -->
+                        <article class="student-card hidden" style="transition-delay: 200ms">
+                            <h4 class="student-title">Chaos Run</h4>
+                            <div class="student-banner">
+                                <img src="Sources/Images/StudentProjects/Chaos-Run.png" alt="Chaos Run Banner">
+                            </div>
+                            <p class="student-description">Chaos Run is a co-op game where you and a friend escape a
+                                military base by stealing a parcel with a forklift. It requires dexterity and patience
+                                to complete!</p>
+                            <a href="https://alexandrebd.itch.io/chaos-run" target="_blank" class="itch-link">
+                                <svg role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path
+                                        d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.786 2.786 0 0 1-1.95-.795c-.182-.178-.32-.37-.446-.59-.127.222-.303.412-.486.59a2.788 2.788 0 0 1-1.95.795c-.092 0-.187-.025-.264-.052-.107 1.113-.152 2.176-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004c-.016-.775-.06-1.838-.168-2.95-.077.026-.172.052-.263.052a2.788 2.788 0 0 1-1.95-.795c-.184-.178-.36-.368-.486-.59-.127.22-.265.412-.447.59a2.786 2.786 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.74 2.74 0 0 1-.468-.602 2.738 2.738 0 0 1-.463.602 2.787 2.787 0 0 1-1.95.794h-.16a2.787 2.787 0 0 1-1.95-.793 2.738 2.738 0 0 1-.464-.602zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953.687-.072 1.406-.108 2.125-.107.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934zM12 12.714c-.002.002-2.14 1.964-2.523 2.662l1.4-.056v1.22c0 .056.56.033 1.123.007.562.026 1.124.05 1.124-.008v-1.22l1.4.055C14.138 14.677 12 12.713 12 12.713z">
+                                    </path>
+                                </svg>
+                                <span>See on Itch.io</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-wrapper hidden">
+                    <div class="contact-info">
+                        <h2 class="section-title">Let's build something extraordinary together.</h2>
+                        <p></p>
+                        <p>Currently open for new opportunities. I'll try my best to get back to you!</p>
+
+                        <div class="social-links">
+                            <a href="https://alexandrebd.itch.io/" aria-label="itch.io" class="social-link"
+                                target="_blank">
+                                <svg role="img" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path
+                                        d="M3.13 1.338C2.08 1.96.02 4.328 0 4.95v1.03c0 1.303 1.22 2.45 2.325 2.45 1.33 0 2.436-1.102 2.436-2.41 0 1.308 1.07 2.41 2.4 2.41 1.328 0 2.362-1.102 2.362-2.41 0 1.308 1.137 2.41 2.466 2.41h.024c1.33 0 2.466-1.102 2.466-2.41 0 1.308 1.034 2.41 2.363 2.41 1.33 0 2.4-1.102 2.4-2.41 0 1.308 1.106 2.41 2.435 2.41C22.78 8.43 24 7.282 24 5.98V4.95c-.02-.62-2.082-2.99-3.13-3.612-3.253-.114-5.508-.134-8.87-.133-3.362 0-7.945.053-8.87.133zm6.376 6.477a2.74 2.74 0 0 1-.468.602c-.5.49-1.19.795-1.947.795a2.786 2.786 0 0 1-1.95-.795c-.182-.178-.32-.37-.446-.59-.127.222-.303.412-.486.59a2.788 2.788 0 0 1-1.95.795c-.092 0-.187-.025-.264-.052-.107 1.113-.152 2.176-.168 2.95v.005l-.006 1.167c.02 2.334-.23 7.564 1.03 8.85 1.952.454 5.545.662 9.15.663 3.605 0 7.198-.21 9.15-.664 1.26-1.284 1.01-6.514 1.03-8.848l-.006-1.167v-.004c-.016-.775-.06-1.838-.168-2.95-.077.026-.172.052-.263.052a2.788 2.788 0 0 1-1.95-.795c-.184-.178-.36-.368-.486-.59-.127.22-.265.412-.447.59a2.786 2.786 0 0 1-1.95.794c-.76 0-1.446-.303-1.948-.793a2.74 2.74 0 0 1-.468-.602 2.738 2.738 0 0 1-.463.602 2.787 2.787 0 0 1-1.95.794h-.16a2.787 2.787 0 0 1-1.95-.793 2.738 2.738 0 0 1-.464-.602zm-2.004 2.59v.002c.795.002 1.5 0 2.373.953.687-.072 1.406-.108 2.125-.107.72 0 1.438.035 2.125.107.873-.953 1.578-.95 2.372-.953.376 0 1.876 0 2.92 2.934l1.123 4.028c.832 2.995-.266 3.068-1.636 3.07-2.03-.075-3.156-1.55-3.156-3.025-1.124.184-2.436.276-3.748.277-1.312 0-2.624-.093-3.748-.277 0 1.475-1.125 2.95-3.156 3.026-1.37-.004-2.468-.077-1.636-3.072l1.122-4.027c1.045-2.934 2.545-2.934 2.92-2.934zM12 12.714c-.002.002-2.14 1.964-2.523 2.662l1.4-.056v1.22c0 .056.56.033 1.123.007.562.026 1.124.05 1.124-.008v-1.22l1.4.055C14.138 14.677 12 12.713 12 12.713z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/alexandre-bd/" aria-label="LinkedIn"
+                                class="social-link" target="_blank">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                                    fill="none">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="https://formspree.io/f/myklvwel" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Alexandre Bonnegarde-Delisle.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-btn lightbox-prev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-btn lightbox-next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
