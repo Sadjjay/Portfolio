@@ -449,6 +449,25 @@ section {
     transform: scale(1.02);
 }
 
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1.5px solid var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline:hover {
+    background: var(--text-primary);
+    color: var(--bg-base);
+    transform: scale(1.02);
+}
+
+.btn-outline svg {
+    flex-shrink: 0;
+}
+
 /* Animations */
 .hidden {
     opacity: 0;
@@ -559,7 +578,79 @@ section {
 
 .hero-cta {
     display: flex;
-    gap: var(--space-3);
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+/* Open to work status pill */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    margin-bottom: var(--space-3);
+    background: rgba(46, 204, 113, 0.1);
+    color: #1d8048;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 999px;
+    border: 1px solid rgba(46, 204, 113, 0.28);
+    letter-spacing: 0.01em;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #2ecc71;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .status-dot { animation: none; }
+}
+
+/* Hero social icons row */
+.hero-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-social {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-social:hover {
+    background: var(--text-primary);
+    color: #fff;
+    border-color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.hero-social:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 @media (max-width: 968px) {
@@ -630,9 +721,12 @@ section {
 }
 
 .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
-    padding: var(--space-1) var(--space-3);
+    padding: 6px var(--space-2);
     border-radius: var(--radius-xl);
     font-size: 0.9rem;
     font-weight: 500;
@@ -644,6 +738,13 @@ section {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+.skill-badge-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Projects Section - Fancy Showcase */
