@@ -366,4 +366,126 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ---------------------------------------------------------------
+    // YouTube spotlight: auto-fetch titles, channels, durations & views
+    // ---------------------------------------------------------------
+    // The API key lives in config.js (gitignored). To enable automatic stats:
+    //   1. Go to https://console.cloud.google.com/apis/credentials and create an API key
+    //   2. Restrict the key to "YouTube Data API v3" + your domain (HTTP referrer)
+    //   3. Paste it inside config.js → window.PORTFOLIO_CONFIG.YOUTUBE_API_KEY
+    // Without a key, thumbnails still display but views/durations stay as "—".
+    const YOUTUBE_API_KEY = (window.PORTFOLIO_CONFIG && window.PORTFOLIO_CONFIG.YOUTUBE_API_KEY) || '';
+
+    const videoCards = document.querySelectorAll('.video-card[data-video-id]');
+    if (videoCards.length > 0 && YOUTUBE_API_KEY) {
+        loadYouTubeStats(videoCards);
+    }
+
+    // Featured banner: replace static image with embedded YouTube trailer on click
+    const trailerBanner = document.querySelector('.featured-banner[data-trailer-id]');
+    if (trailerBanner) {
+        const playTrailer = () => {
+            if (trailerBanner.classList.contains('is-playing')) return;
+            const id = trailerBanner.dataset.trailerId;
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+            iframe.title = 'Trailer';
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+            trailerBanner.classList.add('is-playing');
+            trailerBanner.appendChild(iframe);
+        };
+        trailerBanner.addEventListener('click', playTrailer);
+        trailerBanner.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playTrailer();
+            }
+        });
+    }
+
+    function loadYouTubeStats(cards) {
+        const ids = Array.from(cards).map(c => c.dataset.videoId);
+        const cacheKey = 'siren_yt_stats_v1';
+        const cacheTtl = 6 * 60 * 60 * 1000; // 6 hours
+
+        // Try cache first
+        try {
+            const cached = JSON.parse(localStorage.getItem(cacheKey) || 'null');
+            if (cached && cached.timestamp && (Date.now() - cached.timestamp) < cacheTtl
+                && ids.every(id => cached.data && cached.data[id])) {
+                applyYouTubeStats(cards, cached.data);
+                return;
+            }
+        } catch (e) { /* ignore cache errors */ }
+
+        const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&id=${ids.join(',')}&key=${YOUTUBE_API_KEY}`;
+        fetch(url)
+            .then(res => res.json().then(json => ({ ok: res.ok, status: res.status, json })))
+            .then(({ ok, status, json }) => {
+                if (!ok || json.error) {
+                    console.error('[YouTube API] HTTP', status, json.error || json);
+                    return;
+                }
+                if (!json.items || json.items.length === 0) {
+                    console.warn('[YouTube API] No items returned for', ids);
+                    return;
+                }
+                console.log('[YouTube API] Got', json.items.length, 'items');
+                const data = {};
+                json.items.forEach(item => {
+                    data[item.id] = {
+                        title: item.snippet.title,
+                        channel: item.snippet.channelTitle,
+                        views: parseInt(item.statistics.viewCount, 10) || 0,
+                        duration: item.contentDetails.duration
+                    };
+                });
+                try {
+                    localStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data }));
+                } catch (e) { /* localStorage may be unavailable */ }
+                applyYouTubeStats(cards, data);
+            })
+            .catch(err => console.error('[YouTube API] Fetch failed:', err));
+    }
+
+    function applyYouTubeStats(cards, data) {
+        let totalViews = 0;
+        cards.forEach(card => {
+            const stats = data[card.dataset.videoId];
+            if (!stats) return;
+            totalViews += stats.views;
+
+            const titleEl = card.querySelector('.video-title');
+            const channelEl = card.querySelector('.video-channel');
+            const viewsEl = card.querySelector('.video-views');
+            const durationEl = card.querySelector('.video-duration');
+
+            if (titleEl) titleEl.textContent = stats.title;
+            if (channelEl) channelEl.textContent = stats.channel;
+            if (viewsEl) viewsEl.textContent = formatViewCount(stats.views) + ' views';
+            if (durationEl) durationEl.textContent = formatDuration(stats.duration);
+        });
+
+        const totalEl = document.querySelector('[data-stat="yt-total-views"]');
+        if (totalEl) totalEl.textContent = formatViewCount(totalViews) + '+';
+    }
+
+    function formatViewCount(n) {
+        if (n >= 1_000_000) return (n / 1_000_000).toFixed(n >= 10_000_000 ? 0 : 1).replace(/\.0$/, '') + 'M';
+        if (n >= 1_000) return (n / 1_000).toFixed(n >= 10_000 ? 0 : 1).replace(/\.0$/, '') + 'K';
+        return String(n);
+    }
+
+    // Convert ISO 8601 duration (e.g. "PT1H2M30S") to "1:02:30" or "2:30"
+    function formatDuration(iso) {
+        const m = iso && iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+        if (!m) return '';
+        const h = parseInt(m[1] || '0', 10);
+        const min = parseInt(m[2] || '0', 10);
+        const s = parseInt(m[3] || '0', 10);
+        const pad = v => String(v).padStart(2, '0');
+        return h ? `${h}:${pad(min)}:${pad(s)}` : `${min}:${pad(s)}`;
+    }
 });
