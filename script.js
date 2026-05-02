@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial state to prevent scroll during loading
     document.body.style.overflow = 'hidden';
 
-
-
     // 3. Set Current Year in Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -385,14 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ---------------------------------------------------------------
-    // YouTube spotlight: auto-fetch titles, channels, durations & views
-    // ---------------------------------------------------------------
-    // The API key lives in config.js (gitignored). To enable automatic stats:
-    //   1. Go to https://console.cloud.google.com/apis/credentials and create an API key
-    //   2. Restrict the key to "YouTube Data API v3" + your domain (HTTP referrer)
-    //   3. Paste it inside config.js → window.PORTFOLIO_CONFIG.YOUTUBE_API_KEY
-    // Without a key, thumbnails still display but views/durations stay as "—".
     const YOUTUBE_API_KEY = (window.PORTFOLIO_CONFIG && window.PORTFOLIO_CONFIG.YOUTUBE_API_KEY) || '';
 
     const videoCards = document.querySelectorAll('.video-card[data-video-id]');
@@ -496,7 +486,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return String(n);
     }
 
-    // Convert ISO 8601 duration (e.g. "PT1H2M30S") to "1:02:30" or "2:30"
     function formatDuration(iso) {
         const m = iso && iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
         if (!m) return '';
