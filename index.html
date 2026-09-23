@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexandre Bonnegarde-Delisle | Mobile &amp; Game Developer</title>
     <meta name="description"
-        content="Mobile &amp; Game Developer specializing in Unity, Flutter, C# and Dart. Shipping iOS / Android apps and games on the App Store, Google Play and itch.io. Relocating to Toronto on a Canadian Working Holiday Visa (PVT) valid through December 2027 — no sponsorship needed.">
+        content="Mobile &amp; Game Developer (Unity, Flutter, Swift, C#, Dart) and creator of Cove, a macOS app I built, launched and sell solo. iOS / Android apps and games shipped on the App Store, Google Play and itch.io. Relocating to Toronto with a PVT, no sponsorship needed.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -150,6 +150,10 @@
                                     Dart
                                 </span>
                                 <span class="skill-badge">
+                                    <img class="skill-badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" alt="" loading="lazy">
+                                    Swift
+                                </span>
+                                <span class="skill-badge">
                                     <img class="skill-badge-icon"
                                         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
                                         alt="" loading="lazy">
@@ -185,6 +189,10 @@
                                         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"
                                         alt="" loading="lazy">
                                     Flutter
+                                </span>
+                                <span class="skill-badge">
+                                    <img class="skill-badge-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg" alt="" loading="lazy">
+                                    SwiftUI
                                 </span>
                                 <span class="skill-badge">
                                     <img class="skill-badge-icon"
@@ -250,10 +258,10 @@
                         products since 2021. After a <b>Bachelor in Game Design at ESMA</b> and 5+ years across
                         indie horror games, mobile platformers, ERP front-ends and AI-enhanced apps, I'm now
                         <b>relocating to Toronto</b> with an open <b>Working Holiday Visa (PVT)</b> valid through
-                        <b>December 2027</b> — no sponsorship needed, ready to ship from day one.
+                        <b>December 2027</b>. No sponsorship needed, ready to ship from day one.
                     </p>
                     <p class="about-lead-extra" data-i18n="aboutInterests">Outside of work I stay sharp through
-                        sport and side projects — every experiment is a chance to test a new architecture, a new
+                        sport and side projects. Every experiment is a chance to test a new architecture, a new
                         pattern, or a new engine.</p>
                 </div>
 
@@ -271,7 +279,7 @@
                         </div>
                         <!-- TODO: confirm exact ESMA dates and Bac year -->
                         <div class="about-card-item">
-                            <strong data-i18n="aboutBachelor">Bachelor — Game Design</strong>
+                            <strong data-i18n="aboutBachelor">Bachelor in Game Design</strong>
                             <span>ESMA · Toulouse · 2018&ndash;2021</span>
                         </div>
                         <div class="about-card-item">
@@ -340,6 +348,189 @@
                 <h2 class="section-title hidden" data-i18n="projectsTitle">Projects</h2>
                 <p></p>
                 <div class="project-showcase">
+                    <!-- Project 0: Cove, indie product built, launched and sold solo -->
+                    <article id="project-cove" class="cove-card hidden">
+                        <div class="cove-media" data-video-src="Sources/Videos/Cove/Cove_Promo.mp4"
+                            data-video-poster="Sources/Images/Cove/Cove_Banner.webp" role="button" tabindex="0"
+                            aria-label="Play the Cove promo video">
+                            <div class="cove-hero">
+                                <div class="cove-hero-copy">
+                                    <span class="cove-kicker" data-i18n="coveBadge">Indie product · Built and sold
+                                        solo</span>
+                                    <p class="cove-hero-title">Save your work.<br><span>Switch in a second.</span></p>
+                                    <span class="cove-play" aria-hidden="true">
+                                        <span class="cove-play-icon">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </span>
+                                        <span class="cove-play-label" data-i18n="coveHint">Watch the promo</span>
+                                        <span class="cove-play-time">0:32</span>
+                                    </span>
+                                </div>
+                                <div class="cove-hero-shot">
+                                    <img src="Sources/Images/Cove/Cove_Main_Window.webp"
+                                        alt="Cove main window in light mode">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="cove-credit">Music from <a href="https://uppbeat.io/t/stan-town/groove-sauce"
+                                target="_blank" rel="noopener">Uppbeat</a> · License code: PRKHYHKP44FTZT4R</p>
+
+                        <div class="cove-body">
+                            <div class="cove-header">
+                                <img class="cove-logo" src="Sources/Images/Cove/Cove_Icon.png" alt="Cove app icon">
+                                <div class="cove-title-area">
+                                    <h3>Cove for Mac</h3>
+                                    <div class="project-tags">
+                                        <span class="cove-tag cove-tag--main" data-i18n="coveTagApp">macOS App</span>
+                                        <span class="cove-tag">Swift</span>
+                                        <span class="cove-tag">SwiftUI</span>
+                                        <span class="cove-tag">SwiftData</span>
+                                    </div>
+                                </div>
+                                <span class="cove-live">
+                                    <span class="cove-live-dot" aria-hidden="true"></span>
+                                    <span data-i18n="coveLive">Live · v1.3.1</span>
+                                </span>
+                            </div>
+
+                            <p class="cove-lead" data-i18n="coveLead">Cove saves your whole Mac workspace (apps,
+                                windows, browser tabs, terminals, documents) and brings it back in one click. It even
+                                hides your personal apps when you share your screen. I designed, built, launched and
+                                sell it on my own.</p>
+
+                            <div class="cove-facts">
+                                <div class="cove-fact">
+                                    <span class="cove-fact-value">$19.99</span>
+                                    <span class="cove-fact-label" data-i18n="coveFactPrice">One-time price</span>
+                                </div>
+                                <div class="cove-fact">
+                                    <span class="cove-fact-value">4</span>
+                                    <span class="cove-fact-label" data-i18n="coveFactUpdates">Updates in the first
+                                        month</span>
+                                </div>
+                                <div class="cove-fact">
+                                    <span class="cove-fact-value">6</span>
+                                    <span class="cove-fact-label" data-i18n="coveFactLangs">Languages</span>
+                                </div>
+                                <div class="cove-fact">
+                                    <span class="cove-fact-value">100%</span>
+                                    <span class="cove-fact-label" data-i18n="coveFactLocal">Local, no tracking</span>
+                                </div>
+                            </div>
+
+                            <div class="cove-pillars">
+                                <div class="cove-pillar">
+                                    <div class="cove-pillar-head">
+                                        <span class="cove-pillar-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <polyline points="16 18 22 12 16 6" />
+                                                <polyline points="8 6 2 12 8 18" />
+                                            </svg>
+                                        </span>
+                                        <h4 data-i18n="covePillarBuild">Build</h4>
+                                    </div>
+                                    <ul>
+                                        <li data-i18n="coveBuild1">Native Swift / SwiftUI app with SwiftData storage</li>
+                                        <li data-i18n="coveBuild2">Deep macOS integration: Accessibility API,
+                                            AppleScript, global hotkeys</li>
+                                        <li data-i18n="coveBuild3">Deep support for 20+ apps: browsers, terminals,
+                                            IDEs, Slack, Office</li>
+                                        <li data-i18n="coveBuild4">Automated releases: code signing, Apple
+                                            notarization, Sparkle updates</li>
+                                    </ul>
+                                </div>
+                                <div class="cove-pillar">
+                                    <div class="cove-pillar-head">
+                                        <span class="cove-pillar-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M3 11l18-5v12L3 13v-2z" />
+                                                <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                                            </svg>
+                                        </span>
+                                        <h4 data-i18n="covePillarLaunch">Launch</h4>
+                                    </div>
+                                    <ul>
+                                        <li data-i18n="coveLaunch1">Landing page, press kit and public roadmap</li>
+                                        <li data-i18n="coveLaunch2">30s promo video and tutorial clips</li>
+                                        <li data-i18n="coveLaunch3">Launched on Product Hunt, Reddit, X and Mastodon
+                                        </li>
+                                        <li data-i18n="coveLaunch4">Press outreach to Apple media</li>
+                                    </ul>
+                                </div>
+                                <div class="cove-pillar">
+                                    <div class="cove-pillar-head">
+                                        <span class="cove-pillar-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                                <polyline points="17 6 23 6 23 12" />
+                                            </svg>
+                                        </span>
+                                        <h4 data-i18n="covePillarSell">Sell &amp; grow</h4>
+                                    </div>
+                                    <ul>
+                                        <li data-i18n="coveSell1">Checkout and license keys with Lemon Squeezy</li>
+                                        <li data-i18n="coveSell2">14-day free trial, launch pricing with a deadline
+                                        </li>
+                                        <li data-i18n="coveSell3">Customer support, refunds and email updates</li>
+                                        <li data-i18n="coveSell4">Reddit feedback shipped as features (multi-display,
+                                            Ghostty)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev-btn" aria-label="Previous screenshot">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <div class="project-screenshots">
+                                    <img src="Sources/Images/Cove/Cove_Create_Session.webp"
+                                        alt="Creating a session in Cove" class="zoomable-image" loading="lazy">
+                                    <img src="Sources/Images/Cove/Cove_Park_Current_Session.webp"
+                                        alt="Parking the current session" class="zoomable-image" loading="lazy">
+                                    <img src="Sources/Images/Cove/Cove_Meeting_Mode_Popup.webp"
+                                        alt="Meeting Mode: screen sharing detected" class="zoomable-image"
+                                        loading="lazy">
+                                    <img src="Sources/Images/Cove/Cove_Stats.webp" alt="Cove stats dashboard"
+                                        class="zoomable-image" loading="lazy">
+                                    <img src="Sources/Images/Cove/Cove_Menubar.webp" alt="Cove menu bar"
+                                        class="zoomable-image" loading="lazy">
+                                </div>
+                                <button class="carousel-btn next-btn" aria-label="Next screenshot">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="cove-actions">
+                                <a href="https://covemac.app" target="_blank" rel="noopener"
+                                    class="cove-btn cove-btn--primary">
+                                    <span data-i18n="coveBtnSite">Visit covemac.app</span>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="M7 17L17 7" />
+                                        <polyline points="7 7 17 7 17 17" />
+                                    </svg>
+                                </a>
+                                <a href="https://covemac.app/roadmap" target="_blank" rel="noopener" class="cove-btn"
+                                    data-i18n="coveBtnRoadmap">Public roadmap</a>
+                                <a href="https://covemac.app/press" target="_blank" rel="noopener" class="cove-btn"
+                                    data-i18n="coveBtnPress">Press kit</a>
+                            </div>
+                        </div>
+                    </article>
+
                     <!-- Project 1 (Mobile Game / App) -->
                     <article id="project-ffa" class="fancy-project-card hidden">
                         <div class="project-banner">
@@ -568,7 +759,7 @@
                                             downloads</span>
                                     </div>
                                     <div class="featured-stat">
-                                        <span class="featured-stat-value" data-stat="yt-total-views">—</span>
+                                        <span class="featured-stat-value" data-stat="yt-total-views">...</span>
                                         <span class="featured-stat-label" data-i18n="featuredStatViews">YouTube
                                             views</span>
                                     </div>
@@ -600,13 +791,13 @@
                                                     <path d="M8 5v14l11-7z" />
                                                 </svg>
                                             </span>
-                                            <span class="video-duration">—</span>
+                                            <span class="video-duration">...</span>
                                         </div>
                                         <div class="video-meta">
                                             <p class="video-title">Loading…</p>
                                             <p class="video-sub">
-                                                <span class="video-channel">—</span>
-                                                <span class="video-views">— views</span>
+                                                <span class="video-channel">...</span>
+                                                <span class="video-views">... views</span>
                                             </p>
                                         </div>
                                     </a>
@@ -620,13 +811,13 @@
                                                     <path d="M8 5v14l11-7z" />
                                                 </svg>
                                             </span>
-                                            <span class="video-duration">—</span>
+                                            <span class="video-duration">...</span>
                                         </div>
                                         <div class="video-meta">
                                             <p class="video-title">Loading…</p>
                                             <p class="video-sub">
-                                                <span class="video-channel">—</span>
-                                                <span class="video-views">— views</span>
+                                                <span class="video-channel">...</span>
+                                                <span class="video-views">... views</span>
                                             </p>
                                         </div>
                                     </a>
@@ -640,13 +831,13 @@
                                                     <path d="M8 5v14l11-7z" />
                                                 </svg>
                                             </span>
-                                            <span class="video-duration">—</span>
+                                            <span class="video-duration">...</span>
                                         </div>
                                         <div class="video-meta">
                                             <p class="video-title">Loading…</p>
                                             <p class="video-sub">
-                                                <span class="video-channel">—</span>
-                                                <span class="video-views">— views</span>
+                                                <span class="video-channel">...</span>
+                                                <span class="video-views">... views</span>
                                             </p>
                                         </div>
                                     </a>

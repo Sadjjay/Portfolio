@@ -119,16 +119,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextBtn = container.querySelector('.next-btn');
         const screenshots = container.querySelector('.project-screenshots');
 
-        // Scroll amount is roughly the width of one image + gap
-        const scrollAmount = 266;
+        // Scroll by one image + gap, measured so portrait and landscape galleries both work
+        const getScrollAmount = () => {
+            const firstImg = screenshots && screenshots.querySelector('img');
+            if (!firstImg || !firstImg.offsetWidth) return 266;
+            const gap = parseFloat(getComputedStyle(screenshots).columnGap) || 0;
+            return firstImg.offsetWidth + gap;
+        };
 
         if (prevBtn && nextBtn && screenshots) {
             prevBtn.addEventListener('click', () => {
-                screenshots.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                screenshots.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
             });
 
             nextBtn.addEventListener('click', () => {
-                screenshots.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                screenshots.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
             });
         }
     });
@@ -209,10 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navProjects: "Projects",
             navContact: "Contact",
             aboutTitle: "About Me",
-            aboutStory: "Originally from France, building shipped products since 2021. After a <b>Bachelor in Game Design at ESMA</b> and 5+ years across indie horror games, mobile platformers, ERP front-ends and AI-enhanced apps, I'm now <b>relocating to Toronto</b> with an open <b>Working Holiday Visa (PVT)</b> valid through <b>December 2027</b> — no sponsorship needed, ready to ship from day one.",
-            aboutInterests: "Outside of work I stay sharp through sport and side projects — every experiment is a chance to test a new architecture, a new pattern, or a new engine.",
+            aboutStory: "Originally from France, building shipped products since 2021. After a <b>Bachelor in Game Design at ESMA</b> and 5+ years across indie horror games, mobile platformers, ERP front-ends and AI-enhanced apps, I'm now <b>relocating to Toronto</b> with an open <b>Working Holiday Visa (PVT)</b> valid through <b>December 2027</b>. No sponsorship needed, ready to ship from day one.",
+            aboutInterests: "Outside of work I stay sharp through sport and side projects. Every experiment is a chance to test a new architecture, a new pattern, or a new engine.",
             aboutEducation: "Education",
-            aboutBachelor: "Bachelor — Game Design",
+            aboutBachelor: "Bachelor in Game Design",
             aboutBac: "Scientific Baccalaureate · French High School",
             aboutLanguages: "Languages",
             langFrench: "French",
@@ -229,8 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
             greeting: "Hello, I'm Alexandre Bonnegarde-Delisle",
             heroTitle: "Developing <span class=\"accent\">mobile applications</span> and <span class=\"accent\">games</span>.",
             heroSubtitle: "Mobile &amp; Game Developer",
-            aboutText1: "I work at the rare intersection of <b>mobile</b> and <b>games</b> — shipping <b>Flutter</b> apps and <b>Unity 3D</b> mobile games used by thousands of players. From multiplayer infrastructure to UX polish, I take products from idea to the App Store.",
-            aboutText2: "I love both sides of the craft: the technical (<b>architecture</b>, <b>multiplayer</b>, <b>performance</b>) and the creative (<b>design</b>, <b>UX</b>). Relocating to <b>Toronto</b> with an open <b>Working Holiday Visa (PVT)</b> valid through <b>December 2027</b> — ready to join a team and ship from day one.",
+            aboutText1: "I work at the rare intersection of <b>mobile</b> and <b>games</b>. I ship <b>Flutter</b> apps and <b>Unity 3D</b> mobile games used by thousands of players. From multiplayer infrastructure to UX polish, I take products from idea to the App Store.",
+            aboutText2: "I love both sides of the craft: the technical (<b>architecture</b>, <b>multiplayer</b>, <b>performance</b>) and the creative (<b>design</b>, <b>UX</b>). Relocating to <b>Toronto</b> with an open <b>Working Holiday Visa (PVT)</b> valid through <b>December 2027</b>. Ready to join a team and ship from day one.",
             btnProjects: "View my projects",
             btnContact: "Get in touch",
             btnDownloadCV: "Download CV",
@@ -249,6 +254,33 @@ document.addEventListener('DOMContentLoaded', () => {
             ffaDesc: "Explore Freddy’s Flipping Adventure, a 2D platform mobile game guiding Freddy, a brave dog, through obstacle-filled levels with bonuses. Play online with friends and other players and climb the leaderboards!",
             cendTag: "Mobile Application",
             cendStatus: "Internal beta · iOS & Android",
+            coveBadge: "Indie product · Built and sold solo",
+            coveHint: "Watch the promo",
+            coveTagApp: "macOS App",
+            coveLive: "Live · v1.3.1",
+            coveLead: "Cove saves your whole Mac workspace (apps, windows, browser tabs, terminals, documents) and brings it back in one click. It even hides your personal apps when you share your screen. I designed, built, launched and sell it on my own.",
+            coveFactPrice: "One-time price",
+            coveFactUpdates: "Updates in the first month",
+            coveFactLangs: "Languages",
+            coveFactLocal: "Local, no tracking",
+            covePillarBuild: "Build",
+            coveBuild1: "Native Swift / SwiftUI app with SwiftData storage",
+            coveBuild2: "Deep macOS integration: Accessibility API, AppleScript, global hotkeys",
+            coveBuild3: "Deep support for 20+ apps: browsers, terminals, IDEs, Slack, Office",
+            coveBuild4: "Automated releases: code signing, Apple notarization, Sparkle updates",
+            covePillarLaunch: "Launch",
+            coveLaunch1: "Landing page, press kit and public roadmap",
+            coveLaunch2: "30s promo video and tutorial clips",
+            coveLaunch3: "Launched on Product Hunt, Reddit, X and Mastodon",
+            coveLaunch4: "Press outreach to Apple media",
+            covePillarSell: "Sell & grow",
+            coveSell1: "Checkout and license keys with Lemon Squeezy",
+            coveSell2: "14-day free trial, launch pricing with a deadline",
+            coveSell3: "Customer support, refunds and email updates",
+            coveSell4: "Reddit feedback shipped as features (multi-display, Ghostty)",
+            coveBtnSite: "Visit covemac.app",
+            coveBtnRoadmap: "Public roadmap",
+            coveBtnPress: "Press kit",
             cendDesc: "CEND captures and retrieves sales, purchase, and expense invoices from various platforms. Track real-time activity, tax returns, and social security contributions. Stay connected with your accounting firm for enhanced proximity. New surprises and management modules are updated annually for improved performance.",
             studentTitle: "Student Projects",
             featuredBadge: "Featured on YouTube",
@@ -314,10 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navProjects: "Projets",
             navContact: "Contact",
             aboutTitle: "À propos de moi",
-            aboutStory: "Originaire de France, je livre des produits en production depuis 2021. Après un <b>Bachelor Game Design à l'ESMA</b> et plus de 5 ans d'expérience entre jeux d'horreur indé, plateformer mobile, front-ends ERP et applications boostées à l'IA, je m'installe à <b>Toronto</b> avec un <b>PVT Canada</b> valide jusqu'en <b>décembre 2027</b> — pas de sponsorship requis, prêt à livrer dès le premier jour.",
-            aboutInterests: "En dehors du travail, je me maintiens à niveau avec le sport et des side-projects — chaque expérimentation est une occasion de tester une nouvelle architecture, un nouveau pattern, ou un nouveau moteur.",
+            aboutStory: "Originaire de France, je livre des produits en production depuis 2021. Après un <b>Bachelor Game Design à l'ESMA</b> et plus de 5 ans d'expérience entre jeux d'horreur indé, plateformer mobile, front-ends ERP et applications boostées à l'IA, je m'installe à <b>Toronto</b> avec un <b>PVT Canada</b> valide jusqu'en <b>décembre 2027</b>. Pas de sponsorship requis, prêt à livrer dès le premier jour.",
+            aboutInterests: "En dehors du travail, je me maintiens à niveau avec le sport et des side-projects. Chaque expérimentation est une occasion de tester une nouvelle architecture, un nouveau pattern, ou un nouveau moteur.",
             aboutEducation: "Formation",
-            aboutBachelor: "Bachelor — Conception & Réalisation de Jeux Vidéo",
+            aboutBachelor: "Bachelor en Conception & Réalisation de Jeux Vidéo",
             aboutBac: "Baccalauréat Scientifique",
             aboutLanguages: "Langues",
             langFrench: "Français",
@@ -334,8 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
             greeting: "Bonjour, je suis Alexandre Bonnegarde-Delisle",
             heroTitle: "Développement d'<span class=\"accent\">applications mobiles</span> et de <span class=\"accent\">jeux</span>.",
             heroSubtitle: "Développeur Mobile &amp; Jeux",
-            aboutText1: "Je travaille à l'intersection rare entre <b>mobile</b> et <b>jeux vidéo</b> — je publie des applications <b>Flutter</b> et des jeux mobiles <b>Unity 3D</b> utilisés par des milliers de joueurs. De l'architecture multijoueur au polish UX, j'emmène les produits de l'idée à l'App Store.",
-            aboutText2: "J'aime les deux faces du métier : la technique (<b>architecture</b>, <b>multijoueur</b>, <b>performance</b>) et la créative (<b>design</b>, <b>UX</b>). En route vers <b>Toronto</b> avec un <b>PVT Canada</b> valide jusqu'en <b>décembre 2027</b> — prêt à rejoindre une équipe et livrer dès le premier jour.",
+            aboutText1: "Je travaille à l'intersection rare entre <b>mobile</b> et <b>jeux vidéo</b>. Je publie des applications <b>Flutter</b> et des jeux mobiles <b>Unity 3D</b> utilisés par des milliers de joueurs. De l'architecture multijoueur au polish UX, j'emmène les produits de l'idée à l'App Store.",
+            aboutText2: "J'aime les deux faces du métier : la technique (<b>architecture</b>, <b>multijoueur</b>, <b>performance</b>) et la créative (<b>design</b>, <b>UX</b>). En route vers <b>Toronto</b> avec un <b>PVT Canada</b> valide jusqu'en <b>décembre 2027</b>. Prêt à rejoindre une équipe et livrer dès le premier jour.",
             btnProjects: "Voir mes projets",
             btnContact: "Me contacter",
             btnDownloadCV: "Télécharger le CV",
@@ -354,6 +386,33 @@ document.addEventListener('DOMContentLoaded', () => {
             ffaDesc: "Découvrez Freddy’s Flipping Adventure, un jeu de plateforme 2D où vous guidez Freddy, un chien courageux, à travers des niveaux remplis d'obstacles et de bonus. Jouez en ligne avec vos amis et grimpez dans le classement !",
             cendTag: "Application Mobile",
             cendStatus: "Beta interne · iOS & Android",
+            coveBadge: "Produit indé · Conçu et vendu en solo",
+            coveHint: "Voir la vidéo promo",
+            coveTagApp: "App macOS",
+            coveLive: "En ligne · v1.3.1",
+            coveLead: "Cove sauvegarde tout votre espace de travail Mac (apps, fenêtres, onglets, terminaux, documents) et le restaure en un clic. Il masque même vos apps perso quand vous partagez votre écran. Je l'ai conçu, développé, lancé et je le vends seul.",
+            coveFactPrice: "Prix unique",
+            coveFactUpdates: "Mises à jour le 1er mois",
+            coveFactLangs: "Langues",
+            coveFactLocal: "Local, sans tracking",
+            covePillarBuild: "Construire",
+            coveBuild1: "App native Swift / SwiftUI, stockage SwiftData",
+            coveBuild2: "Intégration macOS poussée : API Accessibility, AppleScript, raccourcis globaux",
+            coveBuild3: "Support avancé de 20+ apps : navigateurs, terminaux, IDE, Slack, Office",
+            coveBuild4: "Releases automatisées : signature, notarisation Apple, mises à jour Sparkle",
+            covePillarLaunch: "Lancer",
+            coveLaunch1: "Landing page, kit presse et roadmap publique",
+            coveLaunch2: "Vidéo promo de 30 s et tutoriels vidéo",
+            coveLaunch3: "Lancement sur Product Hunt, Reddit, X et Mastodon",
+            coveLaunch4: "Démarchage de la presse Apple",
+            covePillarSell: "Vendre & faire grandir",
+            coveSell1: "Paiement et clés de licence avec Lemon Squeezy",
+            coveSell2: "Essai gratuit de 14 jours, prix de lancement limité dans le temps",
+            coveSell3: "Support client, remboursements et emails de mise à jour",
+            coveSell4: "Retours Reddit transformés en fonctionnalités (multi-écrans, Ghostty)",
+            coveBtnSite: "Voir covemac.app",
+            coveBtnRoadmap: "Roadmap publique",
+            coveBtnPress: "Kit presse",
             cendDesc: "CEND capture et récupère les factures de ventes, d'achats et de frais depuis diverses plateformes. Suivez l'activité, les déclarations fiscales et les cotisations sociales en temps réel. Restez connecté avec votre cabinet d'expertise comptable.",
             studentTitle: "Projets Étudiants",
             featuredBadge: "Mis en avant sur YouTube",
@@ -465,6 +524,35 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 playTrailer();
+            }
+        });
+    }
+
+    // Cove card: swap the poster for the self-hosted promo video on click
+    const coveMedia = document.querySelector('.cove-media[data-video-src]');
+    if (coveMedia) {
+        const playCovePromo = () => {
+            if (coveMedia.classList.contains('is-playing')) return;
+            const video = document.createElement('video');
+            video.src = coveMedia.dataset.videoSrc;
+            if (coveMedia.dataset.videoPoster) video.poster = coveMedia.dataset.videoPoster;
+            video.controls = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('aria-label', 'Cove promo video');
+            coveMedia.classList.add('is-playing');
+            coveMedia.removeAttribute('role');
+            coveMedia.removeAttribute('tabindex');
+            coveMedia.appendChild(video);
+            video.play().catch(() => { /* autoplay blocked: controls stay available */ });
+        };
+        coveMedia.addEventListener('click', playCovePromo);
+        coveMedia.addEventListener('keydown', e => {
+            if (e.target !== coveMedia) return;
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playCovePromo();
             }
         });
     }

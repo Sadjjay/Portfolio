@@ -1012,6 +1012,553 @@ section {
     letter-spacing: 0.2px;
 }
 
+/* Cove: product case study card, light theme taken from the Cove app (CoveUI light tokens) */
+.cove-card {
+    --cove-window: #E4E8F0;       /* CoveUI.windowBg */
+    --cove-surface: #EEF1F7;      /* CoveUI.surface (cards) */
+    --cove-surface-2: #E7EBF3;    /* CoveUI.surface2 (hover) */
+    --cove-border: rgba(0, 0, 0, 0.09);
+    --cove-border-2: rgba(0, 0, 0, 0.16);
+    --cove-text: #232B45;         /* deep indigo ink */
+    --cove-slate: #3C4768;        /* brand slate */
+    --cove-text-2: #5A6483;       /* muted slate */
+    --cove-text-3: #8C97BD;       /* periwinkle */
+    --cove-teal: #149C90;         /* teal for text and icons on light */
+    --cove-teal-bright: #2FD6C9;  /* teal for fills */
+    --cove-teal-soft: rgba(47, 214, 201, 0.16);
+    --cove-on-teal: #04211E;
+
+    position: relative;
+    background: linear-gradient(180deg, #EBEEF5 0%, var(--cove-window) 100%);
+    color: var(--cove-text);
+    border: 1px solid var(--cove-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: opacity 0.8s ease-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.cove-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Hero (click to play the promo). Backdrop = CoveBackdrop light: cool off-white + soft slate, teal and lavender halos */
+.cove-media {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid var(--cove-border);
+    background:
+        radial-gradient(55% 70% at 0% 0%, rgba(60, 71, 104, 0.12) 0%, transparent 70%),
+        radial-gradient(50% 65% at 100% 100%, rgba(47, 214, 201, 0.16) 0%, transparent 70%),
+        radial-gradient(35% 45% at 55% 50%, rgba(199, 206, 224, 0.35) 0%, transparent 70%),
+        linear-gradient(180deg, #FBFCFE 0%, #F4F6FB 55%, #ECEFF7 100%);
+}
+
+.cove-media:focus-visible {
+    outline: 3px solid var(--cove-teal-bright);
+    outline-offset: -3px;
+}
+
+.cove-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6) var(--space-8) 0;
+}
+
+.cove-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding-bottom: var(--space-6);
+}
+
+.cove-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--cove-teal-soft);
+    color: var(--cove-teal);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.cove-hero-title {
+    font-family: 'Space Grotesk', var(--font-heading);
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--cove-text);
+    margin: 0;
+}
+
+.cove-hero-title span {
+    color: var(--cove-teal);
+}
+
+.cove-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px 6px 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--cove-border-2);
+    color: var(--cove-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.cove-play-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: var(--cove-teal-bright);
+    color: var(--cove-on-teal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(20, 156, 144, 0.35);
+    flex-shrink: 0;
+}
+
+.cove-play-icon svg {
+    margin-left: 2px;
+}
+
+.cove-play-time {
+    color: var(--cove-text-3);
+    font-weight: 500;
+}
+
+.cove-media:hover .cove-play,
+.cove-media:focus-visible .cove-play {
+    transform: translateY(-2px);
+    border-color: rgba(20, 156, 144, 0.45);
+    box-shadow: 0 8px 18px rgba(35, 43, 69, 0.12);
+}
+
+/* App window bleeds out of the bottom edge, like a landing page hero */
+.cove-hero-shot {
+    align-self: end;
+    margin-bottom: -32px;
+}
+
+.cove-hero-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-slow);
+}
+
+.cove-media:hover .cove-hero-shot img {
+    transform: translateY(-6px);
+}
+
+.cove-media.is-playing {
+    aspect-ratio: 16 / 9;
+    cursor: default;
+    background: #000;
+}
+
+.cove-media.is-playing > .cove-hero {
+    display: none;
+}
+
+.cove-media video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: #000;
+}
+
+/* No lift while the video plays, so it stays steady under the cursor */
+.cove-card:has(.cove-media.is-playing):hover {
+    transform: none;
+}
+
+/* Music credit, only shown once the promo plays */
+.cove-credit {
+    display: none;
+    margin: 0;
+    padding: 8px var(--space-8);
+    font-size: 0.75rem;
+    color: var(--cove-text-2);
+    background: var(--cove-surface);
+    border-bottom: 1px solid var(--cove-border);
+}
+
+.cove-media.is-playing + .cove-credit {
+    display: block;
+}
+
+.cove-credit a {
+    color: var(--cove-teal);
+}
+
+/* Body */
+.cove-body {
+    padding: var(--space-6) var(--space-8);
+}
+
+.cove-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.cove-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(35, 43, 69, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.cove-title-area {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.cove-title-area h3 {
+    font-family: 'Space Grotesk', var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--cove-text);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.cove-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: var(--radius-xl);
+    background: var(--cove-surface);
+    border: 1px solid var(--cove-border);
+    color: var(--cove-text-2);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.cove-tag--main {
+    background: var(--cove-teal-soft);
+    border-color: rgba(20, 156, 144, 0.25);
+    color: var(--cove-teal);
+}
+
+.cove-live {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--cove-teal-soft);
+    border: 1px solid rgba(20, 156, 144, 0.25);
+    color: var(--cove-teal);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.cove-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cove-teal);
+    box-shadow: 0 0 0 0 rgba(20, 156, 144, 0.6);
+    animation: covePulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes covePulse {
+    0% { box-shadow: 0 0 0 0 rgba(20, 156, 144, 0.6); }
+    70% { box-shadow: 0 0 0 9px rgba(20, 156, 144, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(20, 156, 144, 0); }
+}
+
+.cove-lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--cove-slate);
+    max-width: 860px;
+    margin: var(--space-3) 0 var(--space-4);
+}
+
+/* Key facts strip, styled like the stat cards of the app */
+.cove-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: var(--space-4);
+    padding: var(--space-3) var(--space-2);
+    background: var(--cove-surface);
+    border: 1px solid var(--cove-border);
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cove-fact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 8px;
+    border-right: 1px solid var(--cove-border);
+}
+
+.cove-fact:last-child {
+    border-right: none;
+}
+
+.cove-fact-value {
+    font-family: 'Space Grotesk', var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--cove-teal);
+}
+
+.cove-fact-label {
+    font-size: 0.72rem;
+    color: var(--cove-text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Build / Launch / Sell pillars */
+.cove-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+}
+
+.cove-pillar {
+    background: var(--cove-surface);
+    border: 1px solid var(--cove-border);
+    border-radius: 14px;
+    padding: var(--space-3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cove-pillar:hover {
+    border-color: rgba(20, 156, 144, 0.35);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cove-pillar-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--space-2);
+}
+
+.cove-pillar-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--cove-teal-soft);
+    color: var(--cove-teal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cove-pillar-head h4 {
+    font-family: 'Space Grotesk', var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--cove-text);
+    margin: 0;
+}
+
+.cove-pillar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cove-pillar li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--cove-text-2);
+    margin-bottom: 8px;
+}
+
+.cove-pillar li:last-child {
+    margin-bottom: 0;
+}
+
+.cove-pillar li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cove-teal-bright);
+}
+
+/* Screenshots carousel (the PNGs already carry their own window shadow) */
+.cove-card .carousel-container {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
+}
+
+.cove-card .project-screenshots img {
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+    background: transparent;
+}
+
+.cove-card .carousel-btn:hover {
+    background: var(--cove-teal-bright);
+    border-color: var(--cove-teal-bright);
+    color: var(--cove-on-teal);
+}
+
+/* Actions, same look as CovePillButton in the app */
+.cove-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--cove-border);
+}
+
+.cove-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--cove-border-2);
+    background: var(--cove-surface);
+    color: var(--cove-text);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cove-btn:hover {
+    background: var(--cove-surface-2);
+    color: var(--cove-text);
+    transform: translateY(-1px);
+}
+
+.cove-btn--primary {
+    background: var(--cove-teal-bright);
+    border-color: transparent;
+    color: var(--cove-on-teal);
+    box-shadow: 0 2px 8px rgba(20, 156, 144, 0.25);
+}
+
+.cove-btn--primary:hover {
+    background: var(--cove-teal-bright);
+    color: var(--cove-on-teal);
+    box-shadow: 0 4px 14px rgba(20, 156, 144, 0.40);
+}
+
+.cove-btn:focus-visible {
+    outline: 2px solid var(--cove-teal);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    /* Hero stacks: copy on top, app window below */
+    .cove-hero {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-6) var(--space-6) 0;
+    }
+
+    .cove-hero-copy {
+        padding-bottom: 0;
+    }
+
+    .cove-hero-shot {
+        width: 100%;
+        max-width: 560px;
+        justify-self: center;
+        margin-bottom: -20px;
+    }
+
+    .cove-pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .cove-facts {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: var(--space-3);
+    }
+
+    .cove-fact:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .cove-hero {
+        padding: var(--space-4) var(--space-4) 0;
+    }
+
+    .cove-body {
+        padding: var(--space-4);
+    }
+
+    .cove-credit {
+        padding: 8px var(--space-4);
+    }
+
+    .cove-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+    }
+
+    .cove-title-area h3 {
+        font-size: 1.6rem;
+    }
+
+    .cove-live {
+        margin-left: 0;
+    }
+
+    .cove-lead {
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cove-live-dot {
+        animation: none;
+    }
+}
+
 /* Project status pill (for beta / pre-release projects) */
 .project-status-row {
     margin: var(--space-3) 0 var(--space-4);
